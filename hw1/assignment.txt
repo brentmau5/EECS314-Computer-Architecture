@@ -1,0 +1,14 @@
+Homework #1 (10%) due Thursday Jan 26 in class
+(1) Download Spim and Run "Hello world". (2) Hand-in a single print screen of source and output run. You need to submit the hard-copy in class.
+
+Information:
+
+The Spim Simulator
+
+Spim/QtSpim download:
+
+http://www.cs.wisc.edu/~larus/spim.html 
+
+Spim runnable code samples (Hello World.s, simplecalc.s, ...)
+
+http://vip.cs.utsa.edu/classes/cs2734s98/code.html
