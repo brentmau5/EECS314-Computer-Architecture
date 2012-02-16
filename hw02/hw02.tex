@@ -73,4 +73,8 @@ mult $v0, $a0, $a1
 	\hline	
 \end{tabular}
 
+\section*{4.}
+
+OC-relative branching jumps to a place in memory relative to where the program execution is at the time of branching. Because it is relative, there is a limit to how far in memory the program can jump (in MIPS, it is 16 bits). If `there' is more than 16 bits of memory away from `here', then the branch is not possible. The assembler might correct this by having an intermediate jump statement that is less than 16 bits away from `here' and that jumps to `there'.
+
 \end{document}
