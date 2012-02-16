@@ -6,6 +6,7 @@
 \usepackage{times}
 \usepackage{listings}
 \usepackage{mips}
+\usepackage{amsmath}
 
 \title{EECS 314 \\ HW 02}
 \author{John Cleaver \\ jkc22}
@@ -90,5 +91,18 @@ OC-relative branching jumps to a place in memory relative to where the program e
 \noindent{\bf c.} $2.903506946^9$
 
 \noindent{\bf d.} It is an sw operation in MIPS.
+
+\section*{9.}
+
+\section*{10.}
+
+Given that the CPI of the machine is the sum of the weighted CPIs for each set of instructions:
+
+\begin{align*}
+	CPI_{mbase} &= (2 * 40 + 3 * 25 + 3 * 25 + 5 * 10) / 100 = 2.80 \\
+	CPI_{mopt} &= (2 * 40 + 2 * 25 + 3 * 25 + 4 * 10) / 100 = 2.45
+\end{align*}
+
+This would give the $CPI_{mopt}$ a slight advantage in performance.
 
 \end{document}
