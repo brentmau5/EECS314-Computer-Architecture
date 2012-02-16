@@ -3,7 +3,7 @@
 \documentclass[12pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{times}
+%\usepackage{times}
 \usepackage{listings}
 \usepackage{mips}
 \usepackage{amsmath}
@@ -74,15 +74,15 @@ mult $v0, $a0, $a1
         Pseudoinstruction  & Implementation                                     \\ \hline
         move \$t1, \$t2      & addi \$t1, \$t2, 0                                   \\ \hline
         clear \$t0          & add \$t0, \$zero, \$zero                              \\ \hline
-        beq \$t1, small, L  & ~                                                  \\ \hline
-        beq \$t2, big, L    & ~                                                  \\ \hline
+        beq \$t1, small, L  & add \$t5, small, \$zero; beq \$t1, \$t5, L; \\ \hline
+        beq \$t2, big, L    & add \$t5, big, \$zero; beq \$t1, \$t5, L; \\ \hline
         li \$t1, small      & lui \$t1, small; srl \$t1, \$t1, 16;                  \\ \hline
         li \$t2, big        & srl \$at, big, 16; lui \$t2, \$at; ori \$t2, \$t2, big; \\ \hline
         ble \$t3, \$t5, L    & slt \$at, \$t5, \$t3; beq \$at, \$zero, L;              \\ \hline
         bgt \$t4, \$t5, L    & slt \$at, \$t5, \$t4; bne \$at, \$zero, L;              \\ \hline
         bge \$t5, \$t3, L    & slt \$at, \$t5, \$t3; beq \$at, \$zero, L;              \\ \hline
-        addi \$t0, \$t2, big & ~                                                  \\ \hline
-        lw \$t5, big (\$t2)  & ~                                                  \\
+        addi \$t0, \$t2, big & li \$t3, big; add \$t0, \$t2, \$t3; \\ \hline
+        lw \$t5, big (\$t2)  & lui \$t0, big[31:16]; ori \$t0, \$t0, big[15:0]; \\ & add \$t0, \$t2, \$t0; lw \$t5, 0(\$t0)  \\
 	\hline	
 \end{tabular}
 
