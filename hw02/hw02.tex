@@ -80,6 +80,21 @@ OC-relative branching jumps to a place in memory relative to where the program e
 
 \section*{5.}
 
+\begin{lstlisting}
+
+main:
+	beq $s0, $s1, set_zero	#Numbers are equal, so set 0
+	and $t0, $,t0, $zero    #Set zero before testing equality
+	sub $t2, $s1, $s0	#Enters a trap if s1<s0
+	addi $t0, $t0, 1 	#If we get here, t1>t2, so set 1
+
+set_zero:
+	and $t0, $t0, $zero
+
+\end{lstlisting}
+
+
+
 \section*{6.}
 
 \section*{7.}
