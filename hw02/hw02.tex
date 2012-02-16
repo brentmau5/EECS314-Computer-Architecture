@@ -54,6 +54,23 @@ mult $v0, $a0, $a1
 
 \end{lstlisting}
 
+\section*{3.}
 
+\begin{tabular}{|l|l|}
+	\hline
+        Pseudoinstruction  & Implementation                                     \\ \hline
+        move \$t1, \$t2      & addi \$t1, \$t2, 0                                   \\ \hline
+        clear \$t0          & add \$t0, \$zero, \$zero                              \\ \hline
+        beq \$t1, small, L  & ~                                                  \\ \hline
+        beq \$t2, big, L    & ~                                                  \\ \hline
+        li \$t1, small      & lui \$t1, small; srl \$t1, \$t1, 16;                  \\ \hline
+        li \$t2, big        & srl \$at, big, 16; lui \$t2, \$at; ori \$t2, \$t2, big; \\ \hline
+        ble \$t3, \$t5, L    & slt \$at, \$t5, \$t3; beq \$at, \$zero, L;              \\ \hline
+        bgt \$t4, \$t5, L    & slt \$at, \$t5, \$t4; bne \$at, \$zero, L;              \\ \hline
+        bge \$t5, \$t3, L    & slt \$at, \$t5, \$t3; beq \$at, \$zero, L;              \\ \hline
+        addi \$t0, \$t2, big & ~                                                  \\ \hline
+        lw \$t5, big (\$t2)  & ~                                                  \\
+	\hline	
+\end{tabular}
 
 \end{document}
