@@ -107,7 +107,24 @@ set_zero:
 
 \noindent{\bf d.} It is an sw operation in MIPS.
 
+\section*{8.}
+
+Because these numbers are in two's complement, they can be added without any problem despite y being a negative number.
+
+\begin{verbatim}
+
+ 11111 11 1 1                              (Carry)
+  0100 0010 1101 1000 0000 0000 0000 0000  (X)
++ 1011 1110 1110 0000 0000 0000 0000 0000  (Y)
+=============================================
+  0000 0001 1011 1000 0000 0000 0000 0000
+\end{verbatim}
+
+In this particular problem, the overflow does not cause any issues because y is a negative number and the two's complement system uses overflow to ensure the validity of the result when adding a positive and negative number.
+
 \section*{9.}
+
+
 
 \section*{10.}
 
