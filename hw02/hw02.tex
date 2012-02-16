@@ -18,6 +18,18 @@
 
 \section*{1.}
 
+This program shifts both s0 and s1 one bit to the right, but treats them as if they were a contiguous register. One might express this as:
+
+\begin{lstlisting}
+
+srj $s0, $s1, 1
+
+\end{lstlisting}
+
+\begin{verbatim}
+ShiftRightJoin left reg, right reg, number of bits to shift
+\end{verbatim}
+
 %S1 = S1 / 2
 %t0 = S0 * 2^31
 %S0 = S0 / 2
