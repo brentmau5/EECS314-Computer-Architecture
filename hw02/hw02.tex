@@ -4,12 +4,56 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{times}
+\usepackage{listings}
+\usepackage{mips}
 
 \title{EECS 314 \\ HW 02}
 \author{John Cleaver \\ jkc22}
 \date{16 Feb 2012}
 
 \begin{document}
+\lstset{language=[mips]Assembler}
 \maketitle
+
+\section*{1.}
+
+%S1 = S1 / 2
+%t0 = S0 * 2^31
+%S0 = S0 / 2
+%S1 = S1 | t0
+
+%Remove LSB of S1
+%Remove all but the LSB of S0 and store in t0
+%Remove LSB of S0
+%t0 = LSB0000000000000000000
+%S1 = 0xxxxxxxxxxxxxxxxxxxxx
+
+\section*{2.}
+
+\begin{lstlisting}
+
+add $t0, $zero, $zero 			#t0 = 0+0
+
+loop:
+	beq $a1, $zero, finish 		#If a1 = 0, go to finish
+	add $t0, $t0, $a0 		#t0 = t0 + a0
+	sub $a1, $a1, $a0 		#a1 = a1 - a0
+	j loop				#Go to Begining of loop
+
+finish:
+	addi $t0, $t0, 100		#t0 = t0 + 100
+	add $v0, $t0, $zero		#v0 = t0 + 0
+
+\end{lstlisting}
+
+This program performs the operation $a \times b$. The code could be rewritten using multiplication explicitly as shown below.
+
+\begin{lstlisting}
+
+mult $v0, $a0, $a1
+
+\end{lstlisting}
+
+
 
 \end{document}
