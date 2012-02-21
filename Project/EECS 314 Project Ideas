@@ -1,0 +1,13 @@
+EECS 314 Project Ideas
+======================
+
+* Ogg/vorbis decoder
+* Rubiks Cube Solver
+* Sudoku Solver
+* Calc 2 Integrator
+* AES Implementation
+
+Advice:
+
+Try to avoid projects that involve a lot of i/o and user interaction since they are a pain to use in SPIM.
+The best projects are those that are just algorithmic in nature.
