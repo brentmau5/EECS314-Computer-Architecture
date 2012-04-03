@@ -17,6 +17,12 @@
 In order to facilitate that type of instruction, the pipline would need to be able to calculate memory addresses. A second ALU would need to be added afte the data memory stage in order to accomodate this. The first would calculate memory addresses and the second would perform arithmetic operations.
 
 \section*{2}
+
+Branch 1: x 0 x 0 x 0 -> 50\%
+Branch 2: x x x 0 x -> 80\%
+Branch 3: x x 0 x x 0 x -> 71.4\%
+Branch 4: 0 x x x -> 75\%
+
 \section*{3}
 
 This set of instructions is already as inefficient as it can be. Each load operation is followed immediately with an operation that uses that register that it is loading into, necessitating a stall cycle even with data forwarding. It could be made more inefficient if the {\bf beq} statement were sooner in the code, but it has data dependencies that prevent it from being moved.
