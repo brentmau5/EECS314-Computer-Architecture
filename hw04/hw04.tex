@@ -13,9 +13,17 @@
 \maketitle
 
 \section*{1}
+
+In order to facilitate that type of instruction, the pipline would need to be able to calculate memory addresses. A second ALU would need to be added afte the data memory stage in order to accomodate this. The first would calculate memory addresses and the second would perform arithmetic operations.
+
 \section*{2}
 \section*{3}
+
+This set of instructions is already as inefficient as it can be. Each load operation is followed immediately with an operation that uses that register that it is loading into, necessitating a stall cycle even with data forwarding. It could be made more inefficient if the {\bf beq} statement were sooner in the code, but it has data dependencies that prevent it from being moved.
+
 \section*{4}
+
+Attached.
 
 \pagebreak
 \section*{5}
