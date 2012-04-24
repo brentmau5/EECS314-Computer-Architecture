@@ -3,6 +3,7 @@
 \documentclass{article}
 
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
 
 \title{EECS 314 \\ HW \#5}
 \author{John Cleaver}
@@ -12,6 +13,20 @@
 \maketitle
 
 \section*{1}
+
+{\bf a}.
+\begin{align*}
+AMAT &= Hit Time + Miss Rate * Miss Penalty \\
+AMAT &= 2 + .05 * 20 * 2 = 4 ns
+\end{align*}
+
+{\bf b}.
+\begin{align*}
+CPU Time_a &= IC * (2 + 1.5 * 20 * .05) * 2   = 7 * IC \\
+CPU Time_b &= IC * (2 + 1.5 * 20 * .03) * 2.4 = 6.96 * IC
+\end{align*}
+
+Because the times are almost identical, the there is no gain from doing this.
 
 \section*{2} 
 
